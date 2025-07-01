@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: load_scheduling_db
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: load_scheduling
+      POSTGRES_PASSWORD: load_scheduling
+      POSTGRES_DB: load_scheduling
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
